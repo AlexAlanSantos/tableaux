@@ -8,35 +8,60 @@
 '''
 '''
 clausula = "((s e t) > (p v (t v q)))"
-            "(((t v q) v p) > (s e t))"
+            "
+            (((t v q) v p) > (s e t))"
             "(((t v q) v p)) > (s e t)"
             ((p v (q v t)))
 '''
 #arquivo = open(tableaux,a)
 ListaTotal = []
-clausula = "|(a v b)"
+clausula = "(a v n)|(a v b),(b > a)"
+gama1 = ''
+gama2 = ''
 
 #Aqui, será realizado a separação do gama e do alfa! :)
 contemBarra = "|" in clausula
 if(contemBarra == True):
     if(clausula[0] == '|'):
         clausulas = clausula.split('|')
-        gama2 = clausulas[1]
-        ListaTotal += ["F"+gama2]
+        contemVirg = "," in clausulas[1]
+        
+        if(contemVirg == True):
+            gama2 = clausulas[1].split(',')
+        else:
+            gama2 = clausulas[1]
+    for qtdClausulas in range(0, len(gama2)):
+        ListaTotal += ["F"+gama2[qtdClausulas]]
     else:
         clausulas = clausula.split('|')
-        gama1 = clausulas[0]
-        gama2 = clausulas[1]
-        ListaTotal += ["T"+gama1+"_"+"F"+gama2]
+        
+        contemVirg = "," in clausulas[0]
+        if(contemVirg == True):
+            gama1 = clausulas[0].split(',')
+            contemVirg = "," in clausulas[1]
+        else:
+            gama1 = clausulas[0]
+        if(contemVirg == True):
+            gama2 = clausulas[1].split(',')
+        else:
+            gama2 = clausulas[1]
+    '''for qtdClausulas1 in range(0, len(gama1)):
+        ListaTotal += ["T"+gama1[qtdClausulas]]
+    for qtdClausulas2 in range(0, len(gama2)):
+        ListaTotal += ["F"+gama2[qtdClausulas]]'''
 else:
     gama1 = clausula
 
+print(gama1)
+print(gama2)
+print(ListaTotal)
+'''
 contador = 0
 parenteses1 = 0
 parenteses2 = 0
 
 print(ListaTotal)
-
+'''
 '''
 #Aqui será realizado a divisão dos parentes, separando por clausulas
 def EncontrarClausulas ()
