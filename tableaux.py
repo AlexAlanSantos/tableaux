@@ -19,7 +19,7 @@ clausula = "(a v n)|(a v b),(b > a)"
 gama1 = ''
 gama2 = ''
 
-#Aqui, será realizado a separação do gama e do alfa! :)
+#Aqui, será realizado a separação da hipotese e conclusão! :)
 contemBarra = "|" in clausula
 if(contemBarra == True):
     if(clausula[0] == '|'):
@@ -68,8 +68,6 @@ def EncontrarClausulas ()
     #para clausulas duplas com parênteses que não englobam todas as clausulas
     if(gama1 != ''):
         while contador 0 < gama1
-
-
 
 
 
