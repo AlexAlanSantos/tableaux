@@ -45,7 +45,7 @@ def EncontrarClausulas ()
         while contador 0 < gama1
 
 
-
+ijiimjmjiiuuijj
 
 
 '''
