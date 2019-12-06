@@ -16,7 +16,7 @@ clausula = "((s e t) > (p v (t v q)))"
 ListaTotal = []
 clausula = "|(a v b)"
 
-#Aqui, será realizado a separação do gama e do alfa! :)
+#Aqui, será realizado a separação da hipotese e conclusão! :)
 contemBarra = "|" in clausula
 if(contemBarra == True):
     if(clausula[0] == '|'):
@@ -44,8 +44,6 @@ def EncontrarClausulas ()
     if(gama1 != ''):
         while contador 0 < gama1
 
-
-ijiimjmjiiuuijj
 
 
 '''
